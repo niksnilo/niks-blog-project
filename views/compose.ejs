@@ -2,19 +2,23 @@
 <section class="compose">
   <div class="container py-5">
     <div class="row">
-      <div class="col-12">
-        <h1>Compose</h1>
-        <form class="" action="/compose" method="POST">
-            <div class="form-group">
-              <!-- <label class="mt-3">Title</label>
-              <input type="text" class="form-control" name="inputTitle"> -->
-              <label class="mt-3">Name</label>
-              <input type="text" class="form-control" name="inputName">
-              <label class="mt-3">Post</label>
-              <textarea class="form-control" rows="4" name="txtPost"></textarea>
-            </div>
-            <button type="submit" class="btn btnPublish text-white mt-3 ml-0">Publish</button>
-          </form>
+      <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="card ">
+          <div class="card-body">
+            <h1 class="text-center">Compose</h1>
+            <form class="" action="/compose" method="POST">
+              <div class="form-group">
+                <!-- <label class="mt-3">Title</label>
+                <input type="text" class="form-control" name="inputTitle"> -->
+                <label class="mt-3">Name</label>
+                <input type="text" class="form-control" name="inputName" autocomplete="off">
+                <label class="mt-3">Post</label>
+                <textarea class="form-control" rows="4" name="txtPost"></textarea>
+              </div>
+              <button type="submit" class="btn btnPublish text-white mt-3 ml-0">Publish</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
