@@ -1,8 +1,45 @@
 <%- include("partials/header"); -%>
-<h1>Home</h1>
-<p><%= homeContent %></p>
-<% posts.forEach(function(post){ %>
-    <h1><%= post.title %></h1> 
-    <p><%= post.content.substring(0, 100) + "..."; %> <a href="post/<%=post.id%>">See More</a></p> 
-    <% }); %>
+
+<section class="home">
+    <div class="container py-5">
+        <div class="row home-row">
+            <div class="col-lg-6 home-text">
+                <h1>Your Journal for Life</h1>
+                <p>"The greatest glory in living lies not in never falling, but in rising every time we fall." -Nelson Mandela</p>
+                <a href="/compose" class="btn btnCompose ml-0">COMPOSE</a>
+                <a href="#journal" class="btn btnView ml-0 text-white">VIEW JOURNAL</a>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid img-mobile mt-5" src="img/Mobile messages.png" alt="Mobile messages">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="journal">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-5">JOURNALS</h1>
+            </div>
+            <% posts.forEach(function(post){ %>
+            <% const dateCreated = post.createdAt; %>
+            <% const format = {month: "long",day: "numeric",year: "numeric",hour: "numeric",minute: "2-digit"}; %>
+            <% const formatedDate = dateCreated.toLocaleDateString(undefined, format); %>
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4">
+                <div class="card equal">
+                    <div class="card-body">
+                        <!-- <h1><%= post.title %></h1> -->
+                        <h4><%= post.name %></h4>
+                        <h6><%= formatedDate %></h6>
+                        <p class="mt-4"><%= post.content.substring(0, 100) + "..."; %> <a href="post/<%=post._id%>">See More</a></p>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+    
+</section>
+
 <%- include("partials/footer"); -%>

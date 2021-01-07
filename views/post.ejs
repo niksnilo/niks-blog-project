@@ -1,4 +1,20 @@
 <%- include("partials/header"); -%>
-<h1><%= title %></h1>
-<p><%= content %></p>
+<section class="post">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 w-100">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><%= name %></h4>
+                        <h6><%= date %></h6>
+                        <p class="mt-4 text-justify"><%= content %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <a href="/" class="btn btnBack ml-0 text-white">BACK</a>
+            </div>
+        </div>
+    </div>
+</section>
 <%- include("partials/footer"); -%>
