@@ -85,7 +85,7 @@ app.get("/post/:postId", function(req, res){
     //   res.render("post", {title: post.title, content: post.content, year: year});
     const dateCreated = post.createdAt;
     const format = {month: "long",day: "numeric",year: "numeric",hour: "numeric",minute: "2-digit"};
-    const formatedDate = dateCreated.toLocaleDateString(undefined, format);
+    const formatedDate = dateCreated.toUTCString("en-PH", format);
     res.render("post", {
       // title: post.title,
       content: post.content,
