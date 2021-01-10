@@ -47,7 +47,7 @@ const Post = mongoose.model("Post", postSchema);
 
 app.get("/", function(req, res){
 
-  Post.find({}, function(err, posts){
+  Post.find({}).sort({createdAt: -1}).exec(function(err, posts){
     if(!err){
     res.render("home", { posts: posts, year: year, moment: moment });
     }
@@ -87,13 +87,14 @@ app.get("/post/:postId", function(req, res){
     } else {
     //   res.render("post", {title: post.title, content: post.content, year: year});
     const dateCreated = post.createdAt;
-    const format = {month: "long",day: "numeric",year: "numeric",hour: "numeric",minute: "2-digit"};
-    const formatedDate = dateCreated.toUTCString("en-PH", format);
+    // const format = {month: "long",day: "numeric",year: "numeric",hour: "numeric",minute: "2-digit"};
+    // const formatedDate = dateCreated.toUTCString("en-PH", format);
+    const timeInManila = moment.tz(dateCreated, "Asia/Manila").format('MMMM DD, YYYY h:mm:ss A');
     res.render("post", {
       // title: post.title,
       content: post.content,
       name: post.name,
-      date: formatedDate,
+      date: timeInManila,
       year: year
     });
     }
