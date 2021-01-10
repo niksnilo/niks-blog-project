@@ -10,6 +10,9 @@ const _ = require('lodash');
 const date = require(__dirname + "/date.js");
 const year = date.getYear();
 
+const moment = require('moment-timezone');
+
+
 require('dotenv').config();
 
 app.set('view engine', 'ejs');
@@ -46,7 +49,7 @@ app.get("/", function(req, res){
 
   Post.find({}, function(err, posts){
     if(!err){
-    res.render("home", { posts: posts, year: year });
+    res.render("home", { posts: posts, year: year, moment: moment });
     }
   });
   
