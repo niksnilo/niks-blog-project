@@ -127,7 +127,7 @@ div.sticky {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 15;
+    z-index: 99;
 }
 
 .navbar{
@@ -137,22 +137,35 @@ div.sticky {
 /* Media Queries */
 
 @media (min-width: 1200px) {
+    .home-row{
+        margin-top: 80px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    .home-row{
+        margin-top: 80px;
+    }
+    .page-404{
+        margin-top: 60px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .home-text{
         text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
     }
     .img-mobile{
         width: 70%;
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    .home-row{
+        margin-top: -30px;
+    }
+    .page-404{
+        margin-top: 100px;
     }
 }
 
@@ -166,6 +179,12 @@ div.sticky {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    .page-404{
+        margin-top: 100px;
+    }
+    .img-404{
+        width: 400px;
     }
     
 }
@@ -184,6 +203,12 @@ div.sticky {
     .footer-copyright{
         text-align: justify;
     }
+    .page-404{
+        margin-top: 100px;
+    }
+    .img-404{
+        width: 400px;
+    }
 }
 
 @media (min-width: 425px) {
@@ -200,7 +225,7 @@ div.sticky {
     .home-text{
         text-align: left;
         font-size: 20px;
-        margin-top: 50px;
+        margin-top: 40px;
     }
     .footer-copyright{
         text-align: justify;

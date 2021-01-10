@@ -4,13 +4,13 @@
     <div class="container py-5">
         <div class="row home-row">
             <div class="col-lg-6 home-text">
-                <h1>Your Journal for Life</h1>
-                <p>"The greatest glory in living lies not in never falling, but in rising every time we fall." -Nelson Mandela</p>
+                <h1 class="mt-5 font-weight-bold">Your Journal for Life</h1>
+                <p class="h5">"The greatest glory in living lies not in never falling, but in rising every time we fall." -Nelson Mandela</p>
                 <a href="/compose" class="btn btnCompose ml-0">COMPOSE</a>
                 <a href="#journal" class="btn btnView ml-0 text-white">VIEW JOURNAL</a>
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid img-mobile mt-5" src="img/Mobile messages.png" alt="Mobile messages">
+                <img class="img-fluid img-mobile mt-2" src="img/Mobile messages.png" alt="Mobile messages">
             </div>
         </div>
     </div>
@@ -18,9 +18,9 @@
 
 <section id="journal">
     <div class="container py-5">
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-12">
-                <h1 class="text-center mb-5">JOURNALS</h1>
+                <h1 class="text-center mb-5 py-5">JOURNALS</h1>
             </div>
             <% posts.forEach(function(post){ %>
             <% const dateCreated = post.createdAt; %>
